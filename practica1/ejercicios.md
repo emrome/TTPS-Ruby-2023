@@ -104,4 +104,4 @@ Con el método ***instance_variable_get(:@variable_instancia)***
 - Establecer el valor de una variable de instancia de un objeto (sin utilizar un método gene‑
 rado con **attr_writer** o similar) desde fuera de éste.
 
-el método ***instance_variable_set(:@variable_instancia, 100)*** para establecer el valor de una variable de instancia en un objeto.
+El método ***instance_variable_set(:@variable_instancia, 100)*** para establecer el valor de una variable de instancia en un objeto.
