@@ -10,16 +10,14 @@ Extendé la clase Array con el método randomly que funcione de la siguiente man
 class Array
     def randomly(&block)
         shuffled = self.shuffle
-        return shuffled.each unless block_given?
-        return shuffled.each { |element| block.call(element) }
-        # Me retorna el arreglo dos veces, una vez aplicado el block, la otra no
+        puts "ARREGLO SHUFFLED #{shuffled}"
+        return shuffled.to_enum unless block_given?
+        return shuffled.map {|elem| block.call(elem) }
     end
 end
 
-puts [1,2,3,4].randomly { |num| puts num + 1}
-
-puts "ENUMERADOR"
-enumerador=[1,2,3,4].randomly
+puts [1,2,3,4].randomly { |num| num*10 }
+puts enumerador=[1,2,3,4].randomly
 puts enumerador.next
 puts enumerador.next
 puts enumerador.next
